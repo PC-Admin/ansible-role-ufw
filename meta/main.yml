@@ -17,7 +17,3 @@ galaxy_info:
     - bookworm
   galaxy_tags:
   - ufw
-  #role_name: ansible-role-ufw
-
-dependencies:
-  - name: community.general
