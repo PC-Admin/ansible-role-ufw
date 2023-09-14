@@ -1,5 +1,5 @@
 ---
-
+ufw_enabled: false
 ufw_allow_dict:
   - { rule: 'allow', port: 22, proto: 'tcp', from_ip: any, insert_relative_to: 'first-ipv4' }
   - { rule: 'allow', port: 443, proto: 'any', from_ip: 'any', insert_relative_to: 'last-ipv4' }

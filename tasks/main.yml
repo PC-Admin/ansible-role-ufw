@@ -5,6 +5,7 @@
     pkg:
     - ufw
   register: package_status
+  when: ufw_enabled | bool
   until: package_status is success
   delay: 6
   retries: 10
@@ -18,17 +19,21 @@
     insert_relative_to: "{{ item.insert_relative_to | default('zero') }}"
     direction: "{{ item.direction | default('in') }}"
   loop: "{{ ufw_allow_dict }}"
+  when: ufw_enabled | bool
 
 - name: UFW default allow outgoing traffic on host
   community.general.ufw:
     policy: allow
     direction: outgoing
+  when: ufw_enabled | bool
 
 - name: UFW default deny incoming traffic on host
   community.general.ufw:
     policy: deny
     direction: incoming
+  when: ufw_enabled | bool
 
 - name: Enable Firewall on host
   community.general.ufw:
     state: enabled
+  when: ufw_enabled | bool
