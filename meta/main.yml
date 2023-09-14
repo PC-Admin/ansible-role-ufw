@@ -1,0 +1,23 @@
+---
+
+galaxy_info:
+  author: Michael Collins
+  description: An Ansible role for setting up UFW rules.
+  company: PerthServerPlus
+  license: MIT
+  min_ansible_version: 2.10
+  platforms:
+  - name: Ubuntu
+    versions:
+    - focal
+    - jammy
+  - name: Debian
+    versions:
+    - bullseye
+    - bookworm
+  galaxy_tags:
+  - ufw
+  #role_name: ansible-role-ufw
+
+dependencies:
+  - name: community.general
